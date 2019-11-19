@@ -1,0 +1,36 @@
+body {
+  font-family: 'Hiragino Sans','Helvetica Neue',Avenir,"Open Sans",Helvetica,Arial,Verdana,Roboto,"游ゴシック","Yu Gothic","游ゴシック体",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Meiryo UI","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;;
+  font-weight: 300;
+  background-color: rgb(245, 245, 245);
+}
+#app-summary-section {
+  margin: 0;
+}
+.app-statistic-column {
+  margin: auto;
+  text-align: center;
+}
+.app-statistic-column > .ui.mini.statistic > .value {
+  font-size: 1.1em!important;
+  font-weight: normal;
+}
+.app-statistic-column > .ui.mini.statistic > .label {
+  font-size: 12px!important;
+  font-weight: normal;
+}
+
+/** begin books-grid **/
+#app-books-section {
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 3;
+  -moz-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
+}
+#app-books-section img {
+  width: 100% !important;
+  height: auto !important;
+}
+/** end books-grid **/
