@@ -38,9 +38,9 @@
   </section>
 
   <section id="app-books-section">
-    <div v-for="book in bookshelf.books" class="app-book-group">
+    <div v-for="book in bookshelf.books" class="app-book-group" @click="showRandomBookshelf()">
       <img :src="book.cover_url">
-      <button class="circular ui icon teal button app-link-button" @click="showRandomBookshelf()">
+      <button class="circular ui icon teal button app-link-button">
         {{ book.link_count }}
       </button>
     </div>
