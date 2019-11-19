@@ -12,7 +12,7 @@
 <body>
 <div id="app" class="ui fluid container">
   <h4 class="ui top attached header">{{ user.name }} - {{ bookshelf.name }}</h4>
-  
+
   <section id="app-summary-section" class="ui two column grid">
     <div class="ui four wide column">
       <img class="ui tiny circular image" src="./data/1/avatar.png">
@@ -38,7 +38,12 @@
   </section>
 
   <section id="app-books-section">
-    <img :src="book.cover_url" v-for="book in bookshelf.books">
+    <div v-for="book in bookshelf.books" class="app-book-group">
+      <img :src="book.cover_url">
+      <button class="circular ui icon blue button app-link-button">
+        {{ book.link_count }}
+      </button>
+    </div>
   </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>

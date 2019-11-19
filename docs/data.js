@@ -12,12 +12,7 @@ function  _data1() {
       name: '積読ベスト9',
       books: [
         // TODO: linksの持ち方
-        { cover_url: 'https://cover.openbd.jp/9784000010870.jpg' },
-        { cover_url: 'https://cover.openbd.jp/9784000241793.jpg' },
-        { cover_url: 'https://cover.openbd.jp/9784000245395.jpg' },
-        { cover_url: 'https://cover.openbd.jp/9784000010870.jpg' },
-        { cover_url: 'https://cover.openbd.jp/9784000241793.jpg' },
-        { cover_url: 'https://cover.openbd.jp/9784000245395.jpg' },
+        { cover_url: 'https://cover.openbd.jp/9784000010870.jpg', link_count: 4, },
       ]
     }
   };

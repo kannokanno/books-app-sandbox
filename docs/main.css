@@ -34,3 +34,19 @@ body {
   height: auto !important;
 }
 /** end books-grid **/
+
+.app-book-group {
+  position: relative;;
+}
+.app-book-group .app-link-button {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
