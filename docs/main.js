@@ -1,17 +1,27 @@
 new Vue({
   el: '#app',
   data: {
+    index: 0,
+    initData: [],
     user: null,
     bookshelf: null,
     statistics: null,
   },
   created: function() {
-    var data = createData();
-    this.user = data[0].user;
-    this.bookshelf = data[0].bookshelf;
-    this.statistics = data[0].statistics;
+    this.initData = createInitData();
+    this.updateData(this.initData[0]);
   },
   methods: {
+    updateData: function(data) {
+      this.user = data.user;
+      this.bookshelf = data.bookshelf;
+      this.statistics = data.statistics;
+    },
+    showRandomBookshelf: function() {
+      var index = Math.floor((this.index + 1) % 3);
+      this.index = index;
+      this.updateData(this.initData[index]);
+    }
   },
   computed: {
   }

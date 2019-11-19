@@ -15,7 +15,7 @@
 
   <section id="app-summary-section" class="ui two column grid">
     <div class="ui four wide column">
-      <img class="ui tiny circular image" src="./data/1/avatar.png">
+      <img class="ui circular image" :src="user.avatar_url" style="width: 65px; height: 65px;">
     </div>
     <div class="ui four wide column app-statistic-column">
       <div class="ui mini statistic">
@@ -40,7 +40,7 @@
   <section id="app-books-section">
     <div v-for="book in bookshelf.books" class="app-book-group">
       <img :src="book.cover_url">
-      <button class="circular ui icon blue button app-link-button">
+      <button class="circular ui icon teal button app-link-button" @click="showRandomBookshelf()">
         {{ book.link_count }}
       </button>
     </div>
