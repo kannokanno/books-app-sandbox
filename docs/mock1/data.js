@@ -71,7 +71,7 @@ function  _data3() {
 function  _data4() {
   return {
     user: { name: 'Something', avatar_url: './data/2/avatar.jpg' },
-    statistics: { like: 124, follow: 0, follower: 400 },
+    statistics: { like: 164, follow: 0, follower: 40 },
     bookshelf: {
       name: '',
       books: [
@@ -91,7 +91,7 @@ function  _data4() {
 function  _data5() {
   return {
     user: { name: 'ボブ', avatar_url: './data/3/avatar.jpg' },
-    statistics: { like: 124, follow: 0, follower: 400 },
+    statistics: { like: 24, follow: 110, follower: 5 },
     bookshelf: {
       name: '',
       books: [

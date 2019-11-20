@@ -56,7 +56,7 @@
   <section v-if="showSearchSection">
     <div class="ui grid" style="margin-left: 0; margin-right: 0;">
       <div class="ui sixteen wide column" style="padding-left: 0; padding-right: 0;">
-        <div class="ui icon fluid input" @keydown.enter="showSearchResult = true">
+        <div class="ui icon fluid input" @keydown="showSearchResult = true">
           <i class="search icon"></i>
           <input type="text" placeholder="本のタイトルを入力してください">
         </div>
