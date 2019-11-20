@@ -8,7 +8,7 @@ function createInitData() {
 
 function  _data1() {
   return {
-    user: { name: 'かんの', avatar_url: './data/1/avatar.png' },
+    user: { name: '本好き太郎', avatar_url: './data/1/avatar.png' },
     statistics: { like: 214, follow: 34, follower: 300 },
     bookshelf: {
       name: '積読ベスト9',
