@@ -54,3 +54,6 @@ body {
   bottom: 0;
   right: 0;
 }
+.app-book-group img {
+  border: solid #ccc 1px;
+}

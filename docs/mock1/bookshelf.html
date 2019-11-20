@@ -13,36 +13,71 @@
 <div id="app" class="ui fluid container">
   <h4 class="ui top attached header">{{ user.name }}さんの本棚</h4>
 
-  <section id="app-summary-section" class="ui two column grid">
-    <div class="ui four wide column">
-      <img class="ui circular image" :src="user.avatar_url" style="width: 65px; height: 65px;">
-    </div>
-    <div class="ui four wide column app-statistic-column">
-      <div class="ui mini statistic">
-        <div class="value">{{ statistics.like }}</div>
-        <div class="label">いいね</div>
+  <section v-if="!showSearchSection">
+    <section id="app-summary-section" class="ui two column grid">
+      <div class="ui four wide column">
+        <img class="ui circular image" :src="user.avatar_url" style="width: 65px; height: 65px;">
       </div>
-    </div>
-    <div class="ui four wide column app-statistic-column">
-      <div class="ui mini statistic">
-        <div class="value">{{ statistics.follow }}</div>
-        <div class="label">フォロー</div>
+      <div class="ui four wide column app-statistic-column">
+        <div class="ui mini statistic">
+          <div class="value">{{ statistics.like }}</div>
+          <div class="label">いいね</div>
+        </div>
       </div>
-    </div>
-    <div class="ui four wide column app-statistic-column">
-      <div class="ui mini statistic">
-        <div class="value">{{ statistics.follower }}</div>
-        <div class="label">フォロワー</div>
+      <div class="ui four wide column app-statistic-column">
+        <div class="ui mini statistic">
+          <div class="value">{{ statistics.follow }}</div>
+          <div class="label">フォロー</div>
+        </div>
       </div>
-    </div>
+      <div class="ui four wide column app-statistic-column">
+        <div class="ui mini statistic">
+          <div class="value">{{ statistics.follower }}</div>
+          <div class="label">フォロワー</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="app-books-section">
+      <div v-for="(book, index) in bookshelf.books" class="app-book-group" :key="index">
+        <div v-if="book.cover_url">
+          <img :src="book.cover_url" @click="showRandomBookshelf()">
+          <button class="circular ui icon teal button app-link-button" v-if="book.link_count > 0" @click="showRandomBookshelf()">
+            {{ book.link_count }}
+          </button>
+        </div>
+        <div v-else>
+          <img :src="'./empty_cover.jpg'" @click="showAddForm(index)">
+        </div>
+      </div>
+    </section>
   </section>
 
-  <section id="app-books-section">
-    <div v-for="book in bookshelf.books" class="app-book-group" @click="showRandomBookshelf()">
-      <img :src="book.cover_url">
-      <button class="circular ui icon teal button app-link-button">
-        {{ book.link_count }}
-      </button>
+  <section v-if="showSearchSection">
+    <div class="ui grid" style="margin-left: 0; margin-right: 0;">
+      <div class="ui sixteen wide column" style="padding-left: 0; padding-right: 0;">
+        <div class="ui icon fluid input" @keydown.enter="showSearchResult = true">
+          <i class="search icon"></i>
+          <input type="text" placeholder="本のタイトルを入力してください">
+        </div>
+      </div>
+    </div>
+
+    <div v-if="showSearchResult" class="ui grid">
+      <div class="row" v-for="(book, index) in searchResults" :key="index">
+        <div class="five wide column"><img :src="book.cover_url"></div>
+        <div class="eleven wide column" style="margin-left: 0;">
+          <div class="row">
+            <div class="">タイトル</div>
+            <div class="">著者</div>
+          </div>
+          <div class="four wide column" style="margin-top: 2rem;">
+            <button class="ui teal button" @click="addBook(book)">
+              <i class="plus icon"></i>本棚に追加
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
