@@ -11,40 +11,10 @@
 </head>
 <body>
 <div id="app" class="ui fluid container">
-  <h4 class="ui top attached header">{{ user.name }} - {{ bookshelf.name }}</h4>
-
-  <section id="app-summary-section" class="ui two column grid">
-    <div class="ui four wide column">
-      <img class="ui circular image" :src="user.avatar_url" style="width: 65px; height: 65px;">
-    </div>
-    <div class="ui four wide column app-statistic-column">
-      <div class="ui mini statistic">
-        <div class="value">{{ statistics.like }}</div>
-        <div class="label">いいね</div>
-      </div>
-    </div>
-    <div class="ui four wide column app-statistic-column">
-      <div class="ui mini statistic">
-        <div class="value">{{ statistics.follow }}</div>
-        <div class="label">フォロー</div>
-      </div>
-    </div>
-    <div class="ui four wide column app-statistic-column">
-      <div class="ui mini statistic">
-        <div class="value">{{ statistics.follower }}</div>
-        <div class="label">フォロワー</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="app-books-section">
-    <div v-for="book in bookshelf.books" class="app-book-group" @click="showRandomBookshelf()">
-      <img :src="book.cover_url">
-      <button class="circular ui icon teal button app-link-button">
-        {{ book.link_count }}
-      </button>
-    </div>
-  </section>
+  <h4 class="ui top attached header">本棚サービスのモック</h4>
+  <div class="" style="margin-top: 1rem;">
+    <a href="./mock1/signup.html" class="ui blue fluid large button">デザイン1へ</a>
+  </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
