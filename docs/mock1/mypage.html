@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="" />
+  <title>本屋アプリの砂場</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="./main.css">
+</head>
+<body>
+<div id="app" class="ui fluid container">
+  <h4 class="ui top attached header">{{ user.name }} - {{ bookshelf.name }}</h4>
+
+  <section id="app-summary-section" class="ui two column grid">
+    <div class="ui four wide column">
+      <img class="ui circular image" :src="user.avatar_url" style="width: 65px; height: 65px;">
+    </div>
+    <div class="ui four wide column app-statistic-column">
+      <div class="ui mini statistic">
+        <div class="value">{{ statistics.like }}</div>
+        <div class="label">いいね</div>
+      </div>
+    </div>
+    <div class="ui four wide column app-statistic-column">
+      <div class="ui mini statistic">
+        <div class="value">{{ statistics.follow }}</div>
+        <div class="label">フォロー</div>
+      </div>
+    </div>
+    <div class="ui four wide column app-statistic-column">
+      <div class="ui mini statistic">
+        <div class="value">{{ statistics.follower }}</div>
+        <div class="label">フォロワー</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="app-books-section">
+    <div v-for="book in bookshelf.books" class="app-book-group" @click="showRandomBookshelf()">
+      <img :src="book.cover_url">
+      <button class="circular ui icon teal button app-link-button">
+        {{ book.link_count }}
+      </button>
+    </div>
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="./data.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
